@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Djikstra's Algorithm</title>
+        <script src="libraries/p5.min.js" type="text/javascript"></script>
+        <script src="libraries/p5.sound.min.js" type="text/javascript"></script>
+        <script src="sketch.js" type="text/javascript"></script>
+        <script src="scripts/graphtraversal.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div id='divControls'>
+            <label for="selectGraphType">Type of Graph</label>
+            <select id='selectGraphType'>
+                <option>Simple</option>
+                <option>Multi</option>
+                <option>Pseudograph</option>
+                <option>Simple Directed</option>
+                <option>Multi Directed</option>
+                <option>Mixed Graph</option>
+            </select>
+            <label for="inputVerticesNumber">Number of Vertices:</label>
+            <input id='inputVerticesNumber'>
+            <label for="inputEdgesNumber">Number of Edges:</label>
+            <input id='inputEdgesNumber'>
+            <br>
+            <br>
+            <button class='button' id='buttonCreateGraph' onclick="createGraph()">Create Graph</button>
+            <button class='button' id='buttonCalculateShortestPath' onclick="createShortestPath()">Calculate Shortest Path</button>
+        </div>
+        <div id="sketch-holder">
+        </div>
+    </body>
+</html>

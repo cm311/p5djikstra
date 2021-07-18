@@ -1,0 +1,48 @@
+The system first should have a big p5 canvas.  On that canvas we will draw lines.  The lines will be drawn based on a user prompt.
+
+Prompt the user about what kind of graph they want.  Or perhaps even just a box that they can click, or a dropdown.  Which would be best?
+Simple graph - undirected edges, no multiple edges, no loops
+multi graph - undirected edges, multiple edges, no loops
+pseudograph - undirected edgees, multiples, loops
+simple directed - directed, ..., ...
+multi directed - directed, ..., ...
+mixed graph - directed AND undirected, multiple edges, loops
+
+we will prompt the user to enter the amount of vertices and edges.  First start by designed a simple graph.
+
+What we want now is to take adjmatrix and vertices, and to create a path p, an array of vertices, which is the shortest path between vertices[0] and end (a random vertex on the graph).
+
+
+
+REQUIREMENTS -
+ 
+UBIQUITOUS
+DOM/HTML Appearance
+    The <Djiktra's Algorithm program> shall <use a p5.js canvas>
+    The <DAP> shall <Display a dropdown menu, selectGraphType, with 6 options, each a different kind of graph>
+    The <DAP> shall <Display an input box, inputVerticesNumber, to enter the number of vertices>
+    The <DAP> shall <Display an input box, inputEdgesNumber, to enter the number of edges>
+    The <DAP> shall <Display a button, buttonCreateGraph, to send information to the program>
+    The <DAP> shall <Display a button, buttonCalculateShortestPath>
+    The <DAP> shall <Display the above elements in a div, divControls>
+    The <DAP> shall <Display the canvas in a div, sketch-holder>
+
+STATE DRIVEN - 
+CHECK FOR CORRECT GRAPH
+    While <g is not null OR g has isolated vertices> the <DAP> shall <regenerate g> THEN <check for isolated vertices>
+    While <g is not null OR g is not connected> the <DAP> shall <regenerate g> THEN <check that g is a connected graph>
+    
+
+
+EVENT DRIVEN - 
+DRAW DIFFERENT KINDS OF GRAPH
+    When <create graph button is clicked><with simple> the <DAP> shall <calculate and store a graph g using method calcSimple(false)>
+    When <create graph button is clicked><with multi> the <DAP> shall <calculate and store a graph g using method calcMulti(false)>
+    When <create graph button is clicked><with pseudograph> the <DAP> shall <calculate and store a graph g using method calcPseudo(false)>
+    When <create graph button is clicked><with simple directed> the <DAP> shall <calculate and store a graph g using method calcSimple(true)>
+    When <create graph button is clicked><with multi directed> the <DAP> shall <calculate and store a graph g using method calcMulti(true)>
+    When <create graph button is clicked><with mixed graph> the <DAP> shall <calculate and store a graph g using method calcMixed()>
+
+
+UNWANTED BEHAVIOR - 
+If <create graph button is clicked with inappropriate values> THEN <DAP> shall <display the appropriate error message>

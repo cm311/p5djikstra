@@ -1,0 +1,27 @@
+body {
+    background-color: black;
+}
+
+label {
+    color: aliceblue;
+}
+
+select {
+    margin-right: 3%;
+}
+
+input {
+    margin-right: 3%;
+}
+
+#divControls {
+    background-color: black;
+}
+
+#sketch-holder {
+    margin-left: :5%;
+}
+
+.button {
+    border: none;
+}
