@@ -52,12 +52,12 @@ function createGraph() {
     console.log("Creating graph");
     var verticesCount = select('#inputVerticesNumber').value();
     var edgesCount = select('#inputEdgesNumber').value();
-    console.log(verticesCount);
-    if(edgesCount - verticesCount < 0) {
-        isdrawn= false;
+    
+    if(!validateInput(verticesCount, edgesCount)) {
+        isdrawn = false;
         return false;
     }
-    
+        
     do {
         vertices = [];
         for (var i=0; i < verticesCount; i++) {
@@ -75,6 +75,20 @@ function createGraph() {
     isdrawn = true;
     pathdrawn = false;
     end = Math.floor(map(random(), 0, 1, 1, vertices.length));
+    return true;
+}
+
+function validateInput(n1, n2) {
+   var regex = /^[0-9]/
+    
+    if(!n1.match(regex) || !n2.match(regex)) {
+        return false;
+    }
+    
+    if(n2 - n1 < 0) {
+        console.log(n2 - n1);
+        return false;
+    }
     return true;
 }
 
@@ -143,8 +157,8 @@ function drawEdges() {
                 textSize(8);
                 noStroke();
                 fill(200, 200, 10);
-                //text(adjmatrix[i][j].toFixed(1), Math.abs((vertices[i].x + vertices[j].x) / 2),
-                //     Math.abs(vertices[i].y + vertices[j].y) / 2);
+                text(adjmatrix[i][j].toFixed(1), Math.abs((vertices[i].x + vertices[j].x) / 2),
+                     Math.abs(vertices[i].y + vertices[j].y) / 2);
             }
         }
     }

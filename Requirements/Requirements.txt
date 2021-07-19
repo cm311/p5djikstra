@@ -31,6 +31,7 @@ STATE DRIVEN -
 CHECK FOR CORRECT GRAPH
     While <g is not null OR g has isolated vertices> the <DAP> shall <regenerate g> THEN <check for isolated vertices>
     While <g is not null OR g is not connected> the <DAP> shall <regenerate g> THEN <check that g is a connected graph>
+
     
 
 
@@ -45,4 +46,6 @@ DRAW DIFFERENT KINDS OF GRAPH
 
 
 UNWANTED BEHAVIOR - 
-If <create graph button is clicked with inappropriate values> THEN <DAP> shall <display the appropriate error message>
+    If <create graph button is clicked with inappropriate values> THEN <DAP> shall <display the appropriate error message>
+    If <inputVerticesNumbner is not an integer> THEN <DAP> shall <display error message>
+    If <inputEdgesNumber is not an integer> THEN <DAP> shall <display error message>
